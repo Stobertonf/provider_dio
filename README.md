@@ -10,14 +10,12 @@
 
 ## Escopo
 
-📚 Nesse projeto, eu vou ter a oportunidade de utilizar o Provider para fazer a gestão de estado.
-O Flutter tem várias formas de tratar o estado, uma delas, é o setState, que seria o gerenciador
-de estado mais rápido que podemos utilizar até esse momento. 
+📚 Nesse projeto, eu vou ter a oportunidade de desenvolver um App  de Lista de Tarefas utilizando o Provider para fazer a gestão de estado.
+O Flutter tem várias formas de tratar o estado, uma delas, é o setState, que seria o gerenciador de estado mais rápido que podemos utilizar até esse momento. 
 
 Para fazermos a gestão de estado, temos várias opções, como Provider, setState, MobX, Getx e o Bloc (entre outros). Nesse projeto, iremos utilizar o setState e conforme eu for avançando no módulo irei utilizar os demais gerenciadores de estado. No entanto, no Bootcamp Formação Flutter Specialist não iremos utilizar o Bloc.
 
-Além disso, também vou ter a oportunidade de utilizar a Injeção de dependência / inversão de controle(IoC).
-Que nada mais é a Letra D do SOLID (Dependency Inversion Principle) que visa que classe receba informação de forma automática e não seja responsável por buscar as classes, configurações, arquivos e etc.
+Além disso, também vou ter a oportunidade de utilizar a Injeção de dependência / inversão de controle(IoC), que nada mais é a Letra D do SOLID (Dependency Inversion Principle) que visa que classe receba informação de forma automática e não seja responsável por buscar as classes, configurações, arquivos e etc.
 
 A IoC é uma técnica comum usada para implementar o princípio DIP, em que as dependências são injetadas em uma classe em vez de serem criadas dentro dela.
 
