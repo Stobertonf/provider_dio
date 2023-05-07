@@ -23,7 +23,7 @@ A IoC é uma técnica comum usada para implementar o princípio DIP, em que as d
 
 ## Foco
 
-😊 O curso é focado em desenvolver um App utilizando a gestão de estado setState.
+😊 O módulo é focado em desenvolver um App utilizando a gestão de estado Provider, um utilizando o MobX e por fim GetX.
 
 ## Prazo
 
