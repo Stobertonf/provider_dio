@@ -23,7 +23,7 @@ A IoC é uma técnica comum usada para implementar o princípio DIP, em que as d
 
 ## Foco
 
-😊 O curso é focado em desenvolver um App utilizando alguns pacotes e é a continuação do Bootcamp Formação Flutter Specialist. Sendo assim, achei extremamente interessante fazer.
+😊 O curso é focado em desenvolver um App utilizando a gestão de estado setState.
 
 ## Prazo
 
