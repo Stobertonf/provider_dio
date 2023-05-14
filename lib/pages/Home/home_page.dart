@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider_dio/service/dark_mode_service.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -38,6 +40,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           style: GoogleFonts.roboto(),
           semanticsLabel: "APP_TITLE".tr(),
         ),
+        actions: [
+          const Center(
+            child: Text("Dark Mode"),
+          ),
+          Consumer<DarkModeService>(
+            builder: (_, darkModeService, widget) {
+              return Switch(
+                value: darkModeService.darkMode,
+                onChanged: (bool value) {
+                  darkModeService.darkMode = !darkModeService.darkMode;
+                },
+              );
+            },
+          ),
+        ],
       ),
       body: TabBarView(
         controller: tabController,
