@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_dio/pages/Home/home_page.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider_dio/service/contador_service.dart';
 import 'package:provider_dio/service/dark_mode_service.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,7 +13,11 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<DarkModeService>(
-            create: (_) => DarkModeService()),
+          create: (_) => DarkModeService(),
+        ),
+        ChangeNotifierProvider<ContadorProviderService>(
+          create: (_) => ContadorProviderService(),
+        ),
       ],
       child: Consumer<DarkModeService>(builder: (_, darkModeService, widget) {
         return MaterialApp(
