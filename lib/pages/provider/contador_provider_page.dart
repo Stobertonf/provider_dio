@@ -1,30 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_dio/service/contador_service.dart';
 
-class ContadorProviderPage extends StatefulWidget {
+class ContadorProviderPage extends StatelessWidget {
   const ContadorProviderPage({super.key});
 
   @override
-  State<ContadorProviderPage> createState() => _ContadorProviderPageState();
-}
-
-class _ContadorProviderPageState extends State<ContadorProviderPage>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    print("build");
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          "Contador Provider",
+          style: TextStyle(fontSize: 26),
+        ),
+        Consumer<ContadorProviderService>(
+            builder: (_, contadorService, wiidget) {
+          print(
+            "Consumer",
+          );
+          return Text(
+            contadorService.contador.toString(),
+            style: const TextStyle(
+              fontSize: 26,
+            ),
+          );
+        }),
+        TextButton(
+          onPressed: () {
+            Provider.of<ContadorProviderService>(
+              context,
+              listen: false,
+            ).incrementar();
+          },
+          child: const Text(
+            "Incrementar",
+          ),
+        ),
+      ],
+    );
   }
 }
