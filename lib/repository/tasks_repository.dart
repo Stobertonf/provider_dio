@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:provider_dio/models/tasks.dart';
+import 'package:provider_dio/models/tarefa.dart';
 
 class TasksRepository extends ChangeNotifier {
-  final _tarefas = <Tasks>[];
+  final _tarefas = <Tarefa>[];
   var _apenasNaoConcluidos = false;
 
   set apenasNaoConcluidos(bool value) {
@@ -16,7 +16,7 @@ class TasksRepository extends ChangeNotifier {
       ? _tarefas.where((element) => !element.concluido).toList()
       : _tarefas;
 
-  adicionar(Tasks tarefa) {
+  adicionar(Tarefa tarefa) {
     _tarefas.add(tarefa);
     notifyListeners();
   }

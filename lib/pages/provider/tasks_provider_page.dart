@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_dio/models/tasks.dart';
+import 'package:provider_dio/models/tarefa.dart';
 import 'package:provider_dio/repository/tasks_repository.dart';
 
 class TasksProviderPage extends StatelessWidget {
@@ -33,7 +33,7 @@ class TasksProviderPage extends StatelessWidget {
                           context,
                           listen: false,
                         ).adicionar(
-                          Tasks(
+                          Tarefa(
                             descricaoContoller.text,
                             false,
                           ),
