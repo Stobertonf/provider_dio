@@ -8,6 +8,8 @@ import 'package:provider_dio/service/dark_mode_service.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:provider_dio/pages/provider/tasks_provider_page.dart';
+import 'package:provider_dio/pages/provider/contador_provider_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -71,6 +73,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Container(
             color: Colors.green,
           ),
+          const ContadorProviderPage(),
+          TasksProviderPage(),
         ],
       ),
       bottomNavigationBar: ConvexAppBar.badge(
