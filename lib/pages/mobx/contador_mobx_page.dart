@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:provider_dio/service/contador_service.dart';
+import 'package:provider_dio/main.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:provider_dio/service/counter_mobx_service.dart';
 
-class ContadorProviderPage extends StatelessWidget {
-  const ContadorProviderPage({super.key});
+class ContadorMobXPage extends StatelessWidget {
+  ContadorMobXPage({super.key});
+  CounterMobXService contadorMobXService = getIt<CounterMobXService>();
 
   @override
   Widget build(BuildContext context) {
@@ -12,16 +14,12 @@ class ContadorProviderPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
-          "Contador Provider",
+          "Contador MobX",
           style: TextStyle(fontSize: 26),
         ),
-        Consumer<ContadorProviderService>(
-            builder: (_, contadorService, wiidget) {
-          print(
-            "Consumer",
-          );
+        Observer(builder: (context) {
           return Text(
-            contadorService.contador.toString(),
+            "${contadorMobXService.contador}",
             style: const TextStyle(
               fontSize: 26,
             ),
@@ -29,10 +27,7 @@ class ContadorProviderPage extends StatelessWidget {
         }),
         TextButton(
           onPressed: () {
-            Provider.of<ContadorProviderService>(
-              context,
-              listen: false,
-            ).incrementar();
+            contadorMobXService.incrementar();
           },
           child: const Text(
             "Incrementar",

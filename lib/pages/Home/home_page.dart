@@ -4,10 +4,13 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider_dio/pages/mobx/contador_mobx_page.dart';
 import 'package:provider_dio/service/dark_mode_service.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:provider_dio/pages/provider/tasks_provider_page.dart';
+import 'package:provider_dio/pages/provider/contador_provider_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -71,6 +74,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Container(
             color: Colors.green,
           ),
+          const ContadorProviderPage(),
+          TasksProviderPage(),
+          ContadorMobXPage(),
         ],
       ),
       bottomNavigationBar: ConvexAppBar.badge(

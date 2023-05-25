@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:provider_dio/models/tasks.dart';
+import 'package:provider_dio/models/tarefa.dart';
 
 class ListaTarefasController extends GetxController {
-  List<Tasks> get tarefas => _apenasNaoConcluidos.value
+  List<Tarefa> get tarefas => _apenasNaoConcluidos.value
       ? _tarefas.where((element) => !element.concluido).toList().obs
       : _tarefas.toList().obs;
 
@@ -12,10 +12,10 @@ class ListaTarefasController extends GetxController {
     _apenasNaoConcluidos.value = value;
   }
 
-  RxList<Tasks> _tarefas = <Tasks>[].obs;
+  RxList<Tarefa> _tarefas = <Tarefa>[].obs;
 
   adicionar(String descricao) {
-    _tarefas.add(Tasks(descricao, false));
+    _tarefas.add(Tarefa(descricao, false));
   }
 
   alterar(String id, String descricao, bool concluido) {
