@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider_dio/pages/brasil_fields_page/brasil_fields_page.dart';
 import 'package:provider_dio/pages/camera/camera_page.dart';
 import 'package:provider_dio/pages/qr_code/qr_code_page.dart';
 import 'package:provider_dio/pages/battery/battery_page.dart';
@@ -482,6 +483,41 @@ class CustonDrawer extends StatelessWidget {
                 ),
               );
             },
+          ),
+          InkWell(
+            child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
+                width: double.infinity,
+                child: const Row(
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.brazilianRealSign,
+                      size: 24,
+                      color: Colors.blue,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Brasil mask",
+                    ),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const BrasilFieldsPage(),
+                ),
+              );
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
           ),
         ].reversed.toList(),
       ),
