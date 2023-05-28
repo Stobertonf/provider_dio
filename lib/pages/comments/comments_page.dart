@@ -1,5 +1,5 @@
-import '../../main.dart';
 import 'package:flutter/material.dart';
+import 'package:provider_dio/main.dart';
 import 'package:provider_dio/models/comment_model.dart';
 import 'package:provider_dio/repository/comments_repository.dart';
 

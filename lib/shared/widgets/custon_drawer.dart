@@ -1,14 +1,14 @@
-import 'dart:io';
-import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+import 'package:provider_dio/pages/post/post_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:provider_dio/pages/camera/camera_page.dart';
 import 'package:provider_dio/pages/qr_code/qr_code_page.dart';
 import 'package:provider_dio/pages/battery/battery_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider_dio/pages/geolocator/geolocator_page.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:provider_dio/pages/geolocator/geolocator_page.dart';
 import 'package:provider_dio/pages/auto_size_text/auto_size_text_page.dart';
+import 'package:provider_dio/pages/brasil_fields_page/brasil_fields_page.dart';
 import 'package:provider_dio/pages/connectivity_plus/connectivity_plus_page.dart';
 import 'package:provider_dio/pages/percent_indicator/percent_indicator_page.dart';
 
@@ -479,6 +479,71 @@ class CustonDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (_) => const CameraPage(),
+                ),
+              );
+            },
+          ),
+          InkWell(
+            child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
+                width: double.infinity,
+                child: const Row(
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.brazilianRealSign,
+                      size: 24,
+                      color: Colors.blue,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Brasil mask",
+                    ),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const BrasilFieldsPage(),
+                ),
+              );
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 10,
+                ),
+                width: double.infinity,
+                child: const Row(
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.paperPlane,
+                      color: Colors.blue,
+                      size: 24,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Posts"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (bc) => const PostsPage(),
                 ),
               );
             },
