@@ -15,6 +15,7 @@ dependencies:
 
   dio: ^4.0.6
   get: ^4.6.5
+  uuid: ^3.0.6
   mobx: ^2.1.0
   intl: ^0.18.0
   get_it: ^7.2.0
@@ -38,10 +39,14 @@ dependencies:
   animated_text_kit: ^4.2.2
   connectivity_plus: ^2.3.9
   percent_indicator: ^4.2.2
+  firebase_analytics: ^9.3.8
   convex_bottom_bar: ^3.1.0+1
+  firebase_messaging: ^13.1.0
   package_info_plus: ^1.4.3+1
+  firebase_crashlytics: ^2.9.0
   font_awesome_flutter: ^10.2.1
   flutter_launcher_icons: ^0.13.1
+  firebase_remote_config: ^2.0.20
   
 
 dev_dependencies:
