@@ -29,6 +29,7 @@ dependencies:
   brasil_fields: ^1.6.0
   gallery_saver: ^2.3.2
   image_cropper: ^3.0.0
+  firebase_core: ^1.24.0
   auto_size_text: ^3.0.0
   flutter_mobx: ^2.0.6+4
   path_provider: ^2.0.11
